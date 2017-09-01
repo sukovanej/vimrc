@@ -12,3 +12,6 @@ vim +PluginInstall +qall
 echo "Installing YCM"
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
+
+echo "Copying shortcuts"
+cp ./my_shortcuts.vim ~/.vim_runtime/vimrcs/my_shortcuts.vim
