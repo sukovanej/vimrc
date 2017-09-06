@@ -10,7 +10,8 @@ source ~/.vim_runtime/vimrcs/extended.vim
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf'
 
-set tags=./tags
+set tags=./tags,tags;$HOME
+"set tags=./tags
 set number
 au BufWrite * :Autoformat
 map <C-a> :Autoformat
@@ -31,8 +32,35 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'szw/vim-tags'
+Plugin 'sorribas/vim-close-duplicate-tabs'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 colorscheme gruvbox
+
+function! DelTagOfFile(file)
+    let fullpath = a:file
+    let cwd = getcwd()
+    let tagfilename = cwd . "/tags"
+    let f = substitute(fullpath, cwd . "/", "", "")
+    let f = escape(f, './')
+    let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
+    let resp = system(cmd)
+endfunction
+
+function! UpdateTags()
+    let f = expand("%:p")
+    let cwd = getcwd()
+    let tagfilename = cwd . "/tags"
+    let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
+    call DelTagOfFile(f)
+    let resp = system(cmd)
+endfunction
+
+autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
+
+" call NERDTreeAddKeyMap({'key': 't', 'callback': 'NERDTreeMyOpenInTab', 'scope': 'FileNode', 'override': 1 })
+" function NERDTreeMyOpenInTab(node)
+"     call a:node.open({'reuse': "all", 'where': 't'})
+" endfunction
