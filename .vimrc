@@ -31,8 +31,10 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'szw/vim-tags'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set background=dark
 colorscheme gruvbox
