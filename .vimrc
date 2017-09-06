@@ -33,10 +33,12 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'szw/vim-tags'
 Plugin 'sorribas/vim-close-duplicate-tabs'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set background=dark
 colorscheme gruvbox
 
 function! DelTagOfFile(file)
