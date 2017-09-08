@@ -1,20 +1,27 @@
 set runtimepath+=~/.vim_runtime
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 let NERDTreeShowHidden=1
+
 source ~/.vim_runtime/vimrcs/my_shortcuts.vim
 source ~/.vim_runtime/vimrcs/basic.vim
 source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf.py'
+let g:ycm_always_populate_location_list = 1
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf'
-
-set tags=./tags,tags;$HOME
-"set tags=./tags
+set tags=./tags
 set number
-au BufWrite * :Autoformat
-map <C-a> :Autoformat
+" au BufWrite * :Autoformat
+noremap <F3> :Autoformat
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_concepts_highlight = 1
 
 set nocompatible
 filetype off
@@ -32,7 +39,9 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'szw/vim-tags'
-Plugin 'sorribas/vim-close-duplicate-tabs'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/local_vimrc'
+Plugin 'jansenm/vim-cmake'
 Plugin 'morhetz/gruvbox'
 
 call vundle#end()            " required
@@ -61,8 +70,3 @@ function! UpdateTags()
 endfunction
 
 autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
-
-" call NERDTreeAddKeyMap({'key': 't', 'callback': 'NERDTreeMyOpenInTab', 'scope': 'FileNode', 'override': 1 })
-" function NERDTreeMyOpenInTab(node)
-"     call a:node.open({'reuse': "all", 'where': 't'})
-" endfunction
