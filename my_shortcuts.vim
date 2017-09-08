@@ -1,1 +1,1 @@
-map <C-n> :NERDTree
+map <C-n> :NERDTree<CR>
