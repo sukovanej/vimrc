@@ -12,16 +12,24 @@ source ~/.vim_runtime/vimrcs/extended.vim
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
 
+<<<<<<< HEAD
 set tags=./tags;/
 set number
 " au BufWrite * :Autoformat
 noremap <F3> :Autoformat<CR>
+=======
+set tags=./tags
+set number
+" au BufWrite * :Autoformat
+noremap <F3> :Autoformat
+>>>>>>> 2359f169abdacd8620a519e57549a321c016f492
 
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+<<<<<<< HEAD
 
 "" make YCM compatible with UltiSnips (using supertab)
 "let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -32,6 +40,8 @@ let g:cpp_concepts_highlight = 1
 "let g:UltiSnipsExpandTrigger = "<tab>"
 "let g:UltiSnipsJumpForwardTrigger = "<tab>"
 "let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+=======
+>>>>>>> 2359f169abdacd8620a519e57549a321c016f492
 
 set nocompatible
 filetype off
@@ -52,11 +62,39 @@ Plugin 'szw/vim-tags'
 Plugin 'LucHermitte/lh-vim-lib'
 Plugin 'LucHermitte/local_vimrc'
 Plugin 'jansenm/vim-cmake'
+<<<<<<< HEAD
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'quark-zju/vim-cpp-auto-include'
+=======
+Plugin 'morhetz/gruvbox'
+>>>>>>> 2359f169abdacd8620a519e57549a321c016f492
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 colorscheme gruvbox
+<<<<<<< HEAD
+=======
+
+function! DelTagOfFile(file)
+    let fullpath = a:file
+    let cwd = getcwd()
+    let tagfilename = cwd . "/tags"
+    let f = substitute(fullpath, cwd . "/", "", "")
+    let f = escape(f, './')
+    let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
+    let resp = system(cmd)
+endfunction
+
+function! UpdateTags()
+    let f = expand("%:p")
+    let cwd = getcwd()
+    let tagfilename = cwd . "/tags"
+    let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
+    call DelTagOfFile(f)
+    let resp = system(cmd)
+endfunction
+
+autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
+>>>>>>> 2359f169abdacd8620a519e57549a321c016f492
