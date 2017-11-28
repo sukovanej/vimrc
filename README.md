@@ -4,10 +4,10 @@
 
 To update, type
 
-```./install.sh update
+``` ./install.sh update
 ```
 
 To run clean install, type
 
-```./install.sh install
+``` ./install.sh install
 ```
