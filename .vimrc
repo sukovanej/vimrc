@@ -3,6 +3,8 @@ source ~/vimrcs/shortcuts.vim
 
 set nocompatible
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
