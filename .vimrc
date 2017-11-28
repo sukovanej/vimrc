@@ -1,4 +1,5 @@
 source ~/vimrcs/basic.vim
+source ~/vimrcs/shortcuts.vim
 
 set nocompatible
 let g:airline_powerline_fonts = 1
