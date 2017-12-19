@@ -1,1 +1,2 @@
-/home/suk/Projekty/vimrc/shortcuts.vim
+vnoremap / y/<C-R>"<CR>
+
