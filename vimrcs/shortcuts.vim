@@ -1,1 +1,2 @@
-/Users/suk/Temp/vimrc/shortcuts.vim
+vnoremap / y/<C-R>"<CR>
+
