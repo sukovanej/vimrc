@@ -30,6 +30,7 @@ link() {
     echo "Creating symlinks"
     ln -s -f $(pwd)/vimrcs ~/vimrcs
     ln -s -f $(pwd)/shortcuts.vim ~/vimrcs/shortcuts.vim
+    ln -s -f $(pwd)/cpp.vim ~/vimrcs/cpp.vim
     ln -s -f $(pwd)/.vimrc ~/.vimrc
     ln -s -f $(pwd)/.ideavimrc ~/.ideavimrc
 

@@ -1,5 +1,6 @@
 source ~/vimrcs/basic.vim
 source ~/vimrcs/shortcuts.vim
+source ~/vimrcs/cpp.vim
 
 set nocompatible
 let g:airline_powerline_fonts = 1
@@ -18,6 +19,7 @@ Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 call vundle#end()
 filetype plugin indent on
