@@ -1,1 +1,1 @@
-/home/suk/Projekty/vimrc/shortcuts.vim
+/Users/suk/Temp/vimrc/shortcuts.vim

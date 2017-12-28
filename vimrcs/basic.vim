@@ -1,5 +1,6 @@
 set number relativenumber
 set history=500
+set autowrite
 
 " Enable filetype plugins
 filetype plugin on

@@ -8,6 +8,13 @@ update() {
 }
 
 install() {
+    # install powerline fonts
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.sh
+    cd ..
+    rm -rf fonts
+
     if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
         echo "Installing Vundle"
         git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
