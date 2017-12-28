@@ -4,7 +4,10 @@ update() {
     echo "Updating"
     git pull origin master
 
-    install
+    link
+
+    echo "Installing plugins"
+    vim +PluginInstall +qall
 }
 
 install() {
@@ -28,9 +31,7 @@ install() {
 
 link() {
     echo "Creating symlinks"
-    ln -s -f $(pwd)/vimrcs ~/vimrcs
-    ln -s -f $(pwd)/shortcuts.vim ~/vimrcs/shortcuts.vim
-    ln -s -f $(pwd)/cpp.vim ~/vimrcs/cpp.vim
+    ln -s -f $(pwd)/vimrcs/ ~/vimrcs/
     ln -s -f $(pwd)/.vimrc ~/.vimrc
     ln -s -f $(pwd)/.ideavimrc ~/.ideavimrc
 
