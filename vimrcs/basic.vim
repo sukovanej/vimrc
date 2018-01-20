@@ -1,3 +1,14 @@
+let g:NERDTreeWinSize=60
+
+" check max line length
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+hi ColorColumn ctermbg=10 guibg=#1d4943
+set colorcolumn=80
+
+let g:indentLine_color_term = 239
+
 set number relativenumber
 set history=500
 set autowrite
