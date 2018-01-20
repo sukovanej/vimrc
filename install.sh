@@ -34,6 +34,7 @@ link() {
     ln -s -f $(pwd)/vimrcs/ ~/vimrcs/
     ln -s -f $(pwd)/.vimrc ~/.vimrc
     ln -s -f $(pwd)/.ideavimrc ~/.ideavimrc
+    ln -s -f $(pwd)/colors/* ~/.vim/colors/
 
     echo "Done"
 }
