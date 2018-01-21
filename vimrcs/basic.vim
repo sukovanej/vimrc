@@ -7,8 +7,6 @@ match OverLength /\%81v.\+/
 hi ColorColumn ctermbg=10 guibg=#1d4943
 set colorcolumn=80
 
-let g:indentLine_color_term = 239
-
 set number relativenumber
 set history=500
 set autowrite
