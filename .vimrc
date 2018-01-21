@@ -27,11 +27,11 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'nvie/vim-flake8'
 Plugin 'fneu/breezy'
+Plugin 'posva/vim-vue'
 
 call vundle#end()
 filetype plugin indent on

@@ -20,7 +20,8 @@ install() {
 
     if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
         echo "Installing Vundle"
-        git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        git clone https://github.com/VundleVim/Vundle.vim.git \
+            ~/.vim/bundle/Vundle.vim
     fi
 
     link
@@ -35,6 +36,9 @@ link() {
     ln -s -f $(pwd)/.vimrc ~/.vimrc
     ln -s -f $(pwd)/.ideavimrc ~/.ideavimrc
     ln -s -f $(pwd)/colors/* ~/.vim/colors/
+
+    ln -s -f $(pwd)/.vimrc ~/.config/nvim/init.vim
+    ln -s -f $(pwd)/colors/* ~/.config/nvim/colors/
 
     echo "Done"
 }
